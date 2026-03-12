@@ -1,7 +1,6 @@
 # 🎓 Asistente Virtual UPT — Egresados de Ingeniería de Sistemas
 
-Chatbot institucional con IA generativa para la comunicación con egresados de la
-Escuela Profesional de Ingeniería de Sistemas de la Universidad Privada de Tacna.
+Chatbot institucional con IA para la comunicación con egresados.
 
 ---
 
@@ -39,44 +38,8 @@ Usuario → Frontend React → /api/chat (Vercel Serverless) → Anthropic API
                     nunca llega al navegador
 ```
 
----
 
-## 🚀 Despliegue en Vercel (paso a paso)
-
-### Requisitos previos
-- Cuenta en [GitHub](https://github.com) (gratis)
-- Cuenta en [Vercel](https://vercel.com) (gratis)
-- API Key de Anthropic en [console.anthropic.com](https://console.anthropic.com)
-
----
-
-### Paso 1 — Subir el proyecto a GitHub
-
-```bash
-# Inicializar repositorio Git
-git init
-git add .
-git commit -m "feat: chatbot inicial UPT egresados"
-
-# Crear repositorio en GitHub (sin README, sin .gitignore)
-# Luego conectarlo:
-git remote add origin https://github.com/TU_USUARIO/chatbot-upt.git
-git branch -M main
-git push -u origin main
-```
-
----
-
-### Paso 2 — Importar en Vercel
-
-1. Ir a [vercel.com/new](https://vercel.com/new)
-2. Clic en **"Import Git Repository"**
-3. Seleccionar el repositorio `chatbot-upt`
-4. Vercel detecta automáticamente que es un proyecto Vite ✅
-
----
-
-### Paso 3 — Configurar la API Key (¡IMPORTANTE!)
+## Configurar la API Key (¡IMPORTANTE!)
 
 En la pantalla de configuración de Vercel, **antes de hacer Deploy**:
 
@@ -90,7 +53,7 @@ En la pantalla de configuración de Vercel, **antes de hacer Deploy**:
 
 ---
 
-### Paso 4 — Deploy
+## Deploy
 
 1. Clic en **"Deploy"**
 2. Esperar ~2 minutos
@@ -116,31 +79,3 @@ npm run dev
 > En desarrollo local, el proxy de Vite redirige `/api/*` al servidor de Node.
 > En producción (Vercel), las funciones serverless manejan `/api/*` automáticamente.
 
----
-
-## 🔒 Seguridad
-
-| Medida | Descripción |
-|--------|-------------|
-| API Key en servidor | La key nunca se expone al navegador |
-| Validación de input | Se valida estructura y roles de los mensajes |
-| Límite de historial | Máximo 20 mensajes por request |
-| Sin credenciales en repo | `.env` está en `.gitignore` |
-| HTTPS | Vercel fuerza HTTPS en todos los dominios |
-
----
-
-## 🛠️ Tecnologías
-
-- **Frontend:** React 18 + Vite 5
-- **Backend:** Vercel Serverless Functions (Node.js)
-- **IA:** Anthropic Claude (`claude-sonnet-4-20250514`)
-- **Estilos:** CSS Modules + Google Fonts
-- **Deploy:** Vercel
-
----
-
-## 📄 Licencia
-
-Proyecto institucional — Universidad Privada de Tacna  
-Escuela Profesional de Ingeniería de Sistemas
